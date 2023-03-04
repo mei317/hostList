@@ -39,7 +39,7 @@ h1 {
 }
 .c-openBtn p {
   font-size: 14px;
-  margin-left: 4px;
+  margin: 0 6px;
 }
 
 .fa-fw {
@@ -63,6 +63,7 @@ h1 {
   height: 15px;
   border: none;
   background-color: #fff;
+  font-size: 14px;
 }
 
 .search_container input[type=text]:focus {
@@ -72,14 +73,14 @@ h1 {
 .search_container input[type=submit] {
   cursor: pointer;
   font-family: FontAwesome;
-  font-size: 1.2em;
+  font-size: 14px;
   border: none;
   background: none;
   color: #626463;
   position: absolute;
   width: 2em;
   height: 1.08em;
-  right: 0;
+  right: 4px;
   outline: none;
 }
 
