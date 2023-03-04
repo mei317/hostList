@@ -35,6 +35,7 @@ h1 {
   padding: 14px;
   justify-content: flex-end;
   align-items: center;
+  cursor: pointer;
 }
 .c-openBtn p {
   font-size: 14px;
