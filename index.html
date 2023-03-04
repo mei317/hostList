@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>店舗検索</title>
+    <meta name="description" content="店舗検索用">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://kit.fontawesome.com/148320beb0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="apple-touch-icon-precomposed" href="【iphoneホーム画像のパス/apple-touch-icon-precomposed.png】">
+    <meta property="og:title" content="店舗検索">
+    <meta property="og:description" content="店舗検索用">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="ページのURL">
+    <meta property="og:image" content="アイキャッチ画像のURL 1200x630 png">
+    <meta name="robots" content="index,follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@700&display=swap');</style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>店舗検索</h1>
+        <div class="l-nameSearch">
+          <form method="get" action="#" class="search_container">
+            <input type="text" size="25" placeholder="かな カナ abc">
+            <input type="submit" value="&#xf002">
+          </form>
+        </div>
+        <div class="c-openBtn">
+          <i class="fa-solid fa-filter fa-fw fa-sm"></i>
+          <p>絞り込み</p>
+        </div>
+      </header>
+      <div class="l-filterContents">
+        <div class="l-filterContents_wrap">
+          <div class="l-filterContents_ttl">
+            <i class="fa-solid fa-xmark fa-2x c-closeBtn"></i>
+            <p class="l-filterContents_ttlMain">絞り込み</p>
+          </div>
+          <div id="select" class="l-selectBlock">
+            <div class="l-selectBlock_wrapper">
+              <div class="l-selectBlock_wrapper_wrapper">
+                <div class="l-selectBlock_ttl">開店時間</div>
+                <div class="l-selectBlock_content js_conditions" style="display:none;"  data-kuni="open">
+                  <span class="l-selectBlock_check"><input id="open-o18" type="checkbox" name="open" value="o18">
+                    <label for="open-o18">
+                    <span class="c-checkbox"></span>
+                    18:00～
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="open-o19" type="checkbox" name="open" value="o19">
+                    <label for="open-o19">
+                    <span class="c-checkbox"></span>
+                    19:00～
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="open-o20" type="checkbox" name="open" value="o20">
+                    <label for="open-o20">
+                    <span class="c-checkbox"></span>
+                    20:00～
+                    </label>
+                  </span>
+                </div>
+              </div>
+              <div class="l-selectBlock_wrapper_wrapper">
+                <div class="l-selectBlock_ttl">閉店時間</div>
+                <div class="l-selectBlock_content js_conditions" style="display:none;" data-kuni="close">
+                  <span class="l-selectBlock_check"><input id="close-u2300" type="checkbox" name="close" value="u2300">
+                    <label for="close-u2300">
+                      <span class="c-checkbox"></span>
+                      〜23:00
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="close-u2330" type="checkbox" name="close" value="u2330">
+                    <label for="close-u2330">
+                      <span class="c-checkbox"></span>
+                      〜23:30
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="close-u2400" type="checkbox" name="close" value="u2400">
+                    <label for="close-u2400">
+                      <span class="c-checkbox"></span>
+                      〜24:00
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="close-u2430" type="checkbox" name="close" value="u2430">
+                    <label for="close-u2430">
+                      <span class="c-checkbox"></span>
+                      〜24:30
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="close-u2500" type="checkbox" name="close" value="u2500">
+                    <label for="close-u2500">
+                      <span class="c-checkbox"></span>
+                      〜25:00
+                    </label>
+                  </span>
+                </div>
+              </div>
+              <div class="l-selectBlock_wrapper_wrapper">
+                <div class="l-selectBlock_ttl">店休日</div>
+                <div class="l-selectBlock_content js_conditions" style="display:none;" data-kuni="vacation">
+                  <span class="l-selectBlock_check"><input id="vacation-getsu" type="checkbox" name="vacation" value="getsu">
+                    <label for="vacation-getsu">
+                      <span class="c-checkbox"></span>
+                      月
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-ka" type="checkbox" name="vacation" value="ka">
+                    <label for="vacation-ka">
+                      <span class="c-checkbox"></span>
+                      火
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-sui" type="checkbox" name="vacation" value="sui">
+                    <label for="vacation-sui">
+                      <span class="c-checkbox"></span>
+                      水
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-moku" type="checkbox" name="vacation" value="moku">
+                    <label for="vacation-moku">
+                      <span class="c-checkbox"></span>
+                      木
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-kin" type="checkbox" name="vacation" value="kin">
+                    <label for="vacation-kin">
+                      <span class="c-checkbox"></span>
+                      金
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-do" type="checkbox" name="vacation" value="do">
+                    <label for="vacation-do">
+                      <span class="c-checkbox"></span>
+                      土
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-niti" type="checkbox" name="vacation" value="niti">
+                    <label for="vacation-niti">
+                      <span class="c-checkbox"></span>
+                      日
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-1day" type="checkbox" name="vacation" value="1day">
+                    <label for="vacation-1day">
+                      <span class="c-checkbox"></span>
+                      1日
+                    </label>
+                  </span>
+                  <span class="l-selectBlock_check"><input id="vacation-other" type="checkbox" name="vacation" value="other">
+                    <label for="vacation-other">
+                      <span class="c-checkbox"></span>
+                      その他
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="c-searchResult">
+              <span class="c-searchResult_deno js_denominator"></span>件中
+              <span class="c-searchResult_nume js_numerator"></span>件該当
+            </div>
+            <div class="l-selectBlock_release js_release">全選択解除</div>
+          </div>
+        </div>
+      </div>
+      <div class="l-searchResult">
+        <!-- 24:00までならそれまでの23:00,23:30,24:00までの時間をすべて書き出す -->
+        <div class="l-searchResult_item js_target" data-open="o18" data-close="u2330,u2400" data-vacation="getsu">
+          <p>aiu</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o19" data-close="u2300" data-vacation="getsu">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o20" data-close="u2300" data-vacation="moku">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o18" data-close="u2500" data-vacation="moku">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o19" data-close="u2500" data-vacation="moku">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o20" data-close="u2500" data-vacation="getsu">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o18" data-close="u2500" data-vacation="ka" >
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o19" data-close="u2500" data-vacation="sui">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o20" data-close="u2500" data-vacation="sui">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o18" data-close="u2400" data-vacation="getsu">
+          <p>a</p>
+        </div>
+        <div class="l-searchResult_item js_target" data-open="o18,o19" data-close="u2500" data-vacation="getsu">
+          <p>a</p>
+        </div>
+      </div>
+    </div>
+    <script>feather.replace()</script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+
+</html>

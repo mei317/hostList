@@ -1,0 +1,357 @@
+@charset "UTF-8";
+body {
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 11px;
+  font-family: Meiryo, "メイリオ", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", sans-serif;
+  position: relative;
+}
+
+a:link {
+  color: palevioletred;
+}
+
+a:visited {
+  color: #666666;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+h1 {
+  color: #f77297;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.c-openBtn {
+  display: flex;
+  padding: 14px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.c-openBtn p {
+  margin-left: 4px;
+}
+
+.fa-fw {
+  padding: 0px;
+}
+
+.search_container {
+  box-sizing: border-box;
+  position: relative;
+  padding: 3px 4px;
+  border-radius: 5px;
+  height: 2em;
+  width: 300px;
+  overflow: hidden;
+  background-color: #fff;
+  border: #999 solid 1px;
+  margin: 0 auto;
+}
+
+.search_container input[type=text] {
+  height: 15px;
+  border: none;
+  background-color: #fff;
+}
+
+.search_container input[type=text]:focus {
+  outline: 0;
+}
+
+.search_container input[type=submit] {
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.2em;
+  border: none;
+  background: none;
+  color: #626463;
+  position: absolute;
+  width: 2em;
+  height: 1.08em;
+  right: 0;
+  top: 2.9px;
+  outline: none;
+}
+
+.c-searchResult {
+  text-align: center;
+  padding: 20px;
+}
+
+.l-filterContents {
+  letter-spacing: 0.1em;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -120%;
+  width: 90%;
+  height: 100vh;
+  background: #fff;
+  transition: all 0.6s;
+}
+
+.l-filterContents.panelActive {
+  right: 0;
+}
+
+.l-filterContents.panelActive .l-selectBlock {
+  width: 90%;
+  height: 100vh;
+  overflow: auto;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.l-filterContents_ttl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 0.2px solid #ccc;
+}
+.l-filterContents_ttl p {
+  color: #716a71;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.c-closeBtn {
+  position: absolute;
+  color: #716a71;
+  cursor: pointer;
+  left: 24px;
+}
+
+.js_target {
+  display: none;
+}
+
+.js_target.js_selected {
+  display: block;
+}
+
+.l-selectBlock_wrapper_wrapper {
+  margin: 24px 0;
+}
+
+.l-selectBlock_ttl {
+  position: relative;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  padding: 10px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.l-filterContents.panelActive .l-filterContents__list {
+  position: fixed;
+  z-index: 999;
+  width: 90%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.l-selectBlock_content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.l-selectBlock_check:last-child {
+  margin-right: 0;
+}
+
+.l-selectBlock_release {
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #bdbdbd;
+  padding: 15px 0;
+  border-radius: 5px;
+}
+
+body.bgActive {
+  height: 100%;
+  overflow: hidden;
+}
+
+.mainOpacity {
+  filter: blur(3px);
+}
+
+#accordion {
+  width: 96%;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 999;
+  border-bottom: 0.2px solid #ccc;
+}
+#accordion li {
+  margin: 24px 0;
+}
+
+.p-accordionTitle {
+  position: relative;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  padding: 10px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.p-filterTitle {
+  color: #333;
+  padding: 10px;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.l-selectBlock_ttl::after {
+  position: absolute;
+  content: "";
+}
+
+.l-selectBlock_ttl::after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f078";
+  font-weight: 900;
+  top: 33%;
+  left: 74vw;
+}
+
+.l-selectBlock_ttl.close::after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f077";
+  font-weight: 900;
+}
+
+.p-accordionBox {
+  display: none;
+  background: #fff;
+  padding: 0 3%;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+input[type=checkbox]:checked + label {
+  background: #f47497;
+  color: #fff;
+  border: 1px solid #f47497;
+}
+
+input[type=radio]:checked + label {
+  background: #f47497;
+  color: #fff;
+  border: 1px solid #f47497;
+}
+
+label {
+  display: block;
+  margin: 5px;
+  width: 16vw;
+  height: 32px;
+  color: #333;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.p-accordionBox__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.p-accordionBox__under,
+.p-accordionBox__face {
+  position: relative;
+  width: 78px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.p-accordionBox__under:before,
+.p-accordionBox__face:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 20%;
+  border-radius: 20px;
+  display: block;
+  background: #e9e9eb;
+  box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.2) inset;
+  transition: 0.2s ease-in-out;
+}
+
+.p-accordionBox__under:after,
+.p-accordionBox__face:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  width: 26px;
+  height: 26px;
+  display: block;
+  border-radius: 50px;
+  background: #fff;
+  box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease-out;
+}
+
+.p-accordionBox__under.checked:before,
+.p-accordionBox__face.checked:before {
+  background: #f47497;
+}
+
+.p-accordionBox__under.checked:after,
+.p-accordionBox__face.checked:after {
+  left: 36px;
+}
+
+#accordion li.p-filterList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.l-searchResult {
+  font-size: 14px;
+  position: absolute;
+  top: 100px;
+  left: 30px;
+}/*# sourceMappingURL=style.css.map */
