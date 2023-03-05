@@ -47,7 +47,7 @@ h1{
   padding: 0px;
 }
 
-// ------店舗検索------
+// 店舗検索
 .search_container{
   box-sizing: border-box;
   position: relative;
@@ -59,83 +59,74 @@ h1{
   background-color: #fff;
   border: #999 solid 1px;
   margin: 8px auto;
+  & input[type="text"]{
+    height: 15px;
+    border: none;
+    background-color: #fff;
+    font-size: 14px;
+    &:focus{
+      outline: 0;
+    }
+  }
+
+  & input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 14px;
+    border: none;
+    background: none;
+    color: #626463;
+    position: absolute;
+    width: 2em;
+    height: 1.08em;
+    top: 0;
+    right: 4px;
+    outline: none;
+  }
 }
-
-.search_container input[type="text"]{
-  height: 15px;
-  border: none;
-  background-color: #fff;
-  font-size: 14px;
-}
-
-.search_container input[type="text"]:focus{
-  outline: 0;
-}
-
-.search_container input[type="submit"]{
-  cursor: pointer;
-  font-family: FontAwesome;
-  font-size: 14px;
-  border: none;
-  background: none;
-  color: #626463;
-  position: absolute;
-  width: 2em;
-  height: 1.08em;
-  right: 4px;
-  outline: none;
-}
-
-
-
-
-// input{
-//   display: none;
-// }
 
 .c-searchResult{
   text-align: center;
   padding: 20px;
 }
-// ------------
-//------filter------
+
+// フィルター範囲
 .l-filterContents{
+  letter-spacing: 0.1em;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -120%;
+  width: 90%;
+  height: 100vh;
+  background: #fff;
+  transition: all 0.6s;
+  &_ttl{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 0.2px solid #ccc;
     letter-spacing: 0.1em;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    right: -120%;
-    width: 90%;
-    height: 100vh;
-    background: #fff;
-    transition: all 0.6s;
+    & p{
+      color: #716a71;
+      font: {
+        size: 14px;
+        weight: 900;
+      }
+    }
+  }
 }
 
 .l-filterContents.panelActive{
-  right: 0;
-}
-
-.l-filterContents.panelActive .l-selectBlock{
-  width: 90%;
-  height: 100vh;
-  overflow: auto;
-  margin: 0 auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.l-filterContents_ttl{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border-bottom: 0.2px solid #ccc;
-  & p{
-    color: #716a71;
-    font: {
-      size: 14px;
-      weight: 900;
-    }
+    right: 0;
+  & .l-selectBlock{
+    width: 90%;
+    height: 100vh;
+    overflow: auto;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -148,64 +139,68 @@ h1{
 
 .js_target{
   display: none;
-}
-
-.js_target.js_selected{
-  display: block;
-}
-
-.l-selectBlock_wrapper_wrapper{
-  margin: 24px 0;
-}
-
-.l-selectBlock_ttl{
-  position: relative;
-  display: block;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #333;
-  padding:10px;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: all .5s ease;
-  font: {
-    size: 0.7rem;
-    weight: bold;
+  &.js_selected{
+    display: block;
   }
 }
 
-.l-filterContents.panelActive .l-filterContents__list{
-  position: fixed;
-  z-index: 999;
-  width: 90%;
-  height: 100vh;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+.l-selectBlock{
+  &_wrapper_wrapper{
+    margin: 24px 0;
+  }
+  &_ttl{
+    position: relative;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #333;
+    padding:10px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all .5s ease;
+    font: {
+      size: 0.7rem;
+      weight: bold;
+    }
+    &::after{
+      position: absolute;
+      content:'';
+    }
+    &::after{
+      font-family: "Font Awesome 6 Free";
+      content: '\f078';
+      font-weight: 900;
+      top: 33%;
+      left: 74vw;
+    }
+    &.close::after{
+      font-family: "Font Awesome 6 Free";
+      content: '\f077';
+      font-weight: 900;
+    }
+  }
+  &_content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &_check:last-child{
+    margin-right: 0;
+  }
+  &_release{
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: #bdbdbd;
+    padding: 15px 0;
+    border-radius: 5px;
+    margin: 0 auto;
+  }
 }
 
-.l-selectBlock_content{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.l-selectBlock_check:last-child{
-  margin-right: 0;
-}
-.l-selectBlock_release{
-  width: 250px;
-  height: 40px;
-  text-align: center;
-  color: #fff;
-  background-color: #bdbdbd;
-  padding: 15px 0;
-  border-radius: 5px;
-  margin: 0 auto;
-}
-
-
-// 背景固定
+// body固定
 body.bgActive{
   height: 100%;
   overflow: hidden;
@@ -215,72 +210,22 @@ body.bgActive{
   filter: blur(3px);
 }
 
-// ------------
-// ------accordionDesign------
-#accordion{
-  width: 96%;
-  max-width: 900px;
-  margin:0 auto;
-  z-index: 999;
-  border-bottom: 0.2px solid #ccc;
-  & li{
-    margin: 24px 0;
-  }
-}
+// accordionDesign
 
-.p-accordionTitle{
-  position: relative;
+label{
   display: block;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 5px;
+  width: 16vw;
+  height: 32px;
   color: #333;
-  padding:10px;
-  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 30px;
   cursor: pointer;
-  transition: all .5s ease;
-  font: {
-    size: 0.7rem;
-    weight: bold;
-  }
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.p-filterTitle{
-  color: #333;
-  padding:10px;
-  letter-spacing: 0.1em;
-  font: {
-    size: 0.7rem;
-    weight: bold;
-  }
-}
-
-.l-selectBlock_ttl::after{
-  position: absolute;
-  content:'';
-}
-
-.l-selectBlock_ttl::after{
-  font-family: "Font Awesome 6 Free";
-  content: '\f078';
-  font-weight: 900;
-  top: 33%;
-  left: 74vw;
-}
-
-.l-selectBlock_ttl.close::after{
-  font-family: "Font Awesome 6 Free";
-  content: '\f077';
-  font-weight: 900;
-}
-
-.p-accordionBox{
-  display: none;
-  background: #fff;
-  padding: 0 3%;
-}
-
-// ------accordionContents------
 input[type=checkbox],
 input[type=radio]{
   display: none;
@@ -297,27 +242,7 @@ input[type=radio]:checked + label{
   color: #fff;
   border: 1px solid #f47497;
   }
-
-label{
-  display: block;
-  margin: 5px;
-  width: 16vw;
-  height: 32px;
-  color: #333;
-  text-align: center;
-  line-height: 30px;
-  cursor: pointer;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.p-accordionBox__list{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
+// -----------------------
 .p-accordionBox__under,
 .p-accordionBox__face{
   position: relative;
@@ -370,11 +295,6 @@ label{
   left: 36px;
 }
 
-#accordion li.p-filterList{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 // ------------
 
 .l-searchResult{
