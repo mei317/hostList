@@ -122,7 +122,7 @@ $(function(){
   });
 
   $(document).on('click','.js_release',function(){
-    $('.bl_selectBlock_check input').each(function(){
+    $('.l-selectBlock_check input').each(function(){
         $(this).prop('checked', false);
     });
     setConditions();
