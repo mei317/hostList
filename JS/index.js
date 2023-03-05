@@ -50,10 +50,13 @@ $(function(){
   var box = $('.js_target');
   var conditions = $('.js_conditions');
   var findConditions;
+  var currentType;
+  var count = 0;
+  var checkcount = 0;
   var data_check = 0;
   var condition ={};
-  $('.js_denominator').text(box.length);
 
+  $('.js_denominator').text(box.length);
   for(var i = 0; i < conditions.length; i++){
     currentType = conditions[i].getAttribute('data-kuni');
     condition[currentType] = [];
@@ -65,6 +68,7 @@ $(function(){
 
     for(var i = 0; i < conditions.length; i++){
       currentType = conditions[i].getAttribute('data-kuni');
+
       findConditions = conditions[i].querySelectorAll('input');
 
       for(var n = 0; n< findConditions.length; n++){
@@ -90,6 +94,7 @@ $(function(){
       for(var i = 0; i < conditions.length; i++){
         currentType = conditions[i].getAttribute('data-kuni');
         var currentBoxTypes = $(box[m]).data(currentType).split(',');
+
         for(var j = 0; j < currentBoxTypes.length; j++){
           if(condition[currentType][currentBoxTypes[j]]){
             data_check++;
@@ -106,10 +111,12 @@ $(function(){
         }
         data_check = 0;
     }
-    $('.js_numerator').text(count);//件数表示の分子をセット
+
+    $('.js_numerator').text(count);
   }
 
   setConditions();
+
   $(document).on('click','input',function(){
     setConditions();
   });
@@ -119,7 +126,5 @@ $(function(){
         $(this).prop('checked', false);
     });
     setConditions();
-
   });
-
 });
